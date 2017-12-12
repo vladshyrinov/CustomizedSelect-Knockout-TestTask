@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LD - TestTask</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="app-wrapper" data-bind="click: outInputHandler">
+        <section class="countries">
+            <h2 class="heading">Choose Countries</h2>
+            <input data-bind="event: { keyup: inputHandler, focus: inputHintHandler}" class="countries-input" type="text">
+            <p data-bind="visible: isFocused" class="input-hint">Start typing</p>
+            <div data-bind="visible: (inputCountries().length && inputField.value), event: { mouseover: overListHandler}" class="countries-list-wrapper">
+                <span class="list-hint">Please select your country</span>
+                <ul class="countries-list" data-bind="foreach: inputCountries, click: selectCountryHandler">
+                    <li class="country-item select-item" data-bind="text: $data"></li>
+                </ul>
+            </div>
+        </section>
+        <section class="selected-countries">
+            <h2 class="heading">Selected Countries</h2>
+            <ul class="countries-list selected-list" data-bind="foreach: selectedCountries, click: removeCountryHandler, visible: selectedCountries().length">
+                <li class="country-item">
+                        <span class="cross-delete">x</span>
+                        <span data-bind="text: $data"></span>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="js/list.js"></script>
+</body>
+
+</html>

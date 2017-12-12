@@ -1,0 +1,111 @@
+:root {
+    --border: 1px solid #aaa; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+#app-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10vh;
+    width: 100wv;
+    height: 90vh;
+}
+
+.countries,
+.selected-countries {
+    width: 250px;
+}
+
+.heading {
+    text-align: center;
+}
+
+.countries-input {
+    width: 100%;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    border: var(--border);
+    box-shadow: 0 0 1px #777;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+}
+
+.countries-input:focus {
+    box-shadow: 0 0 2px #444;
+}
+
+.input-hint {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.countries-list-wrapper {
+    border: var(--border);
+}
+
+
+.list-hint {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+}
+
+.countries-list {
+    list-style: none;
+    overflow-y: scroll;
+    height: 300px;
+}
+
+.countries-list::-webkit-scrollbar {
+    width: 10px;
+    background: #bbb;
+}
+
+.countries-list::-webkit-scrollbar-thumb {
+    background: #777;
+}
+
+.country-item {
+    display: block;
+    padding: 7px 10px;
+    font-size: 14px;
+}
+
+.active-country {
+    background: #ccc;
+    cursor: pointer;
+}
+
+.heading {
+    margin-bottom: 10px;
+}
+
+.selected-list {
+    border: var(--border);
+}
+
+.cross-delete {
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    #app-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center; 
+    }
+
+    .selected-countries {
+        margin-top: 50px;
+    }
+}
+
